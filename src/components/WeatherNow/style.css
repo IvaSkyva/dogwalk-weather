@@ -1,0 +1,30 @@
+.jasno {
+    background: url('../WeatherNow/images/jasno_zima.JPG') center/cover;
+  }
+  .skorojasno {
+    background: url('../WeatherNow/images/skoro_jasno2.png') center/cover;
+  }
+  .skorozatazeno {
+    background: url('../WeatherNow/images/skoro_zatazeno.jpg') center/cover;
+  }
+  .cloudysunny {
+    background: url('../WeatherNow/images/cloudy_sunnyA.JPG') center/cover;
+  }
+  .zatazeno {
+    background: url('../WeatherNow/images/zatazeno3.png') center/cover;
+  }
+  .bourka {
+    background: url('../WeatherNow/images/bourka2.jpg') center/cover;
+  }
+  .mlha {
+    background: url('../WeatherNow/images/mlha3.jpg') center/cover;
+  }
+  .zima {
+    background: url('../WeatherNow/images/snezeni.JPG') center/cover;
+  }
+  .zimanoc {
+    background: url('../WeatherNow/images/zima_nocA.png') center/cover;
+  }
+.noc {
+    background: url("../WeatherNow/images/zima_nocC.png") center/cover;
+  }

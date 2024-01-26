@@ -1,6 +1,6 @@
 h1 {
   margin-bottom: 30px;
-  font-size: var(--font-heading);
+  font-size: var(--font-title);
   text-align: center;
   color: var(--white);
 }
@@ -11,8 +11,8 @@ h1 {
   align-items: center;
 }
 .weather {
-  margin: 10px auto 30px auto;
-  width: 350px;
+  margin: 10px 0 30px 0;
+  width: 300px;
   overflow: hidden;
   border-radius: 10px;
   border: 5px solid rgba(0, 0, 0, 0.5);
@@ -20,7 +20,7 @@ h1 {
 }
 @media (min-width: 800px) {
   .weather {
-    width: 700px;
+    width: 800px;
     display: flex-wrap;
   }
   .weather__current,
@@ -44,6 +44,12 @@ h1 {
   text-align: center;
   margin: 0 0 20px 0;
 }
+
+.weather__section {
+  padding: 5px 0 5px 0;
+  
+}
+@media (min-width: 800px) {
 .weather__inner {
   display: flex;
 }
@@ -55,7 +61,11 @@ h1 {
 }
 .weather__section {
   flex: 0 0 50%;
+  padding: 0 0 0 0;
+  
 }
+}
+
 .weather__title {
   font-size: var(--font-small);
   font-weight: 400;
@@ -64,13 +74,23 @@ h1 {
   padding: 0 0 5px 0;
   margin: 0 0 5px 0;
 }
+.weather__title2 {
+  font-size: var(--font-medium);
+  font-weight: 600;
+  line-height: 1.5;
+  
+  padding: 0 0 5px 5px;
+  margin: 0 0 5px 0;
+}
 .weather__value {
   font-size: var(--font-large);
   text-align: center;
   font-weight: 600;
+  padding-top: 10px;
 }
 .weather__section--temp {
   text-align: center;
+  
 }
 .weather__temp-value {
   font-size: var(--font-xl);
@@ -86,7 +106,7 @@ h1 {
   margin-top: 5px;
   font-size: var(--font-medium);
   font-weight: 600;
-  line-height: 1;
+  line-height: 2;
 }
 .weather__section--icon {
   text-align: center;
@@ -112,10 +132,10 @@ h1 {
 }
 .forecast__day {
   flex: 1;
-  font-size: var(--font-small);
+  font-size: var(--font-medium);
 }
 .forecast__icon {
-  height: 40px;
+  height: 80px;
 }
 .forecast__temp {
   flex: 0 0 70px;
@@ -123,13 +143,14 @@ h1 {
 }
 
 .button-group {
-  width: 350px;
   margin: 10px auto;
   display: flex;
+  flex-wrap: wrap;
   border-radius: 10px;
   border: 5px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
 }
+
 .button {
   flex: 1 1 auto;
   padding: 10px;
@@ -138,7 +159,7 @@ h1 {
   font-weight: 400;
   background: var(--button);
   color: var(--white);
-  border: 0;
+  border: 3px;
   outline: 0;
   cursor: pointer;
 }
@@ -175,3 +196,5 @@ h1 {
   background-color: var(--background-active);
   outline: none;
 }
+
+
