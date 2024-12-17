@@ -1,48 +1,71 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 
 import WeatherForecast from "./components/WeatherForecast";
-import WeatherNow from "./components/WeatherNow"
+import WeatherNow from "./components/WeatherNow";
 
+const App = () => {
+  const [cityname, setCityname] = useState("Liberec"); // Vybrané město
+  const [availableCities, setAvailableCities] = useState([]); // Seznam měst z WeatherNow
 
+  // Funkce pro získání seznamu měst
+  const fetchCitiesFromWeatherNow = () => {
+    // Nahraďte pevně daný seznam voláním API, pokud má být dynamický
+    setAvailableCities([
+      "Liberec",
+      "Praha",
+      "Plzeň",
+      "České Budějovice",
+      "Brno",
+      "Olomouc",
+      "Ostrava",
+    ]);
+  };
 
- const App = () => {
+  useEffect(() => {
+    // Načtení dostupných měst při prvním renderování
+    fetchCitiesFromWeatherNow();
+  }, []);
 
-    const [cityname, setCityname] = useState('Liberec')
-
-    const handleClick = (event) => {
-      setCityname(event.target.value)
-    }
+  // Zpracování změny výběru města
+  const handleCityChange = (event) => {
+    setCityname(event.target.value);
+  };
 
   return (
-     
-
     <div className="App">
-       <div className="container">
+      <div className="container">
         <h1>Předpověď počasí pro vycházku se psem</h1>
+        <h4>
+          <a href="https://www.sepsem.cz">www.sepsem.cz</a>
+        </h4>
+
         <div className="weather">
-          { <div className="button-group">
-            <button className="button"onClick={handleClick} value='Liberec' >Liberec</button>
-            <button className="button"onClick={handleClick} value='Prague' >Praha</button>
-            <button className="button"onClick={handleClick} value='Pilsen'>Plzeň</button>
-            <button className="button"onClick={handleClick} value='Ceske Budejovice' >České Budějovice</button>
-            <button className="button"onClick={handleClick} value='Brno'>Brno</button>
-            <button className="button"onClick={handleClick} value='Olomouc' >Olomouc</button>
-            <button className="button"onClick={handleClick} value='Ostrava'>Ostrava</button>
-          </div> } 
+          {/* Dropdown místo tlačítek */}
+          <div className="dropdown-group">
+            <label htmlFor="city-dropdown">Vyberte město: </label>
+            <select
+              id="city-dropdown"
+              className="dropdown"
+              value={cityname}
+              onChange={handleCityChange}
+            >
+              {availableCities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </div>
 
-
-           <WeatherNow cityname={cityname} />
-           <WeatherForecast cityname={cityname}/>
-
-         </div>
-      </div> 
+          {/* Komponenty s daty pro vybrané město */}
+          <WeatherNow cityname={cityname} />
+          <WeatherForecast cityname={cityname} />
+        </div>
+      </div>
     </div>
-
-    
   );
 };
-
 
 export default App;

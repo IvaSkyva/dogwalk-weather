@@ -8,7 +8,7 @@ const WeatherImage = ({ icons, temper }) => {
   let temperText;
   
 
-  if ((icons === '01d' || icons === '01n') && temper < 20) {
+  if ((icons === '01d' || icons === '01n') && temper > 20) {
     temperText = 'Jasná obloha bez mráčku, nenechávejte psa zavřeného v autě, teplota v zavřeném autě rychle stoupá. Pokud je to možné, vyhněte se procházce po rozehřátem asfaltu.';
   } 
   else if ((icons === '01d' || icons === '01n') && (temper >= 0 && temper <= 20)) {

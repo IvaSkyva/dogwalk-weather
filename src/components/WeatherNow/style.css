@@ -1,5 +1,5 @@
 .jasno {
-    background: url('../WeatherNow/images/jasno_zima.JPG') center/cover;
+    background: url('../WeatherNow/images/jasno1.jpg') center/cover;
   }
   .skorojasno {
     background: url('../WeatherNow/images/skoro_jasno2.png') center/cover;
@@ -26,5 +26,5 @@
     background: url('../WeatherNow/images/zima_nocA.png') center/cover;
   }
 .noc {
-    background: url("../WeatherNow/images/zima_nocC.png") center/cover;
+    background: url("../WeatherNow/images/night3.jpg") center/cover;
   }
